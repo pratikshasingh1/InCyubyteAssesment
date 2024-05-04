@@ -1,0 +1,16 @@
+<% if @error_message %>
+  <p><%= @error_message %></p>
+<% end %>
+
+<div class="container">
+  <div style="display: flex; position: absolute; top: 50%; left: 30%;">  
+    <%= form_with(url: "/add", method: "post", html: { style: "width: 500px;" }) do |form| %>
+      <%= form.text_field :numbers, placeholder: "Enter numbers separated by comma or custom delimiter", style: "width: 70%;" %>
+      <%= form.submit "Calculate" %>
+    <% end %>
+  </div>
+</div>
+
+<% if @sum %>
+  <p>Sum: <%= @sum %></p>
+<% end %>
